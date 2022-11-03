@@ -89,7 +89,7 @@ const Signup = () => {
       <Input
         label="Email"
         name="email"
-        placeholder="email@example.com"
+        placeholder="example@ufl.edu"
         value={input.email}
         onChange={handleOnChange}
         error={error.email}
