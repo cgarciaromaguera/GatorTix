@@ -15,7 +15,7 @@ const Dashboard = () => {
         <h3 className={styles.greeting}>{`Hi👋, ${me?.fullName || 'User'}`}</h3>
         <h1 className={styles.title}>React + Firebase Boilerplate</h1>
         <p className={styles.description}>
-          This is
+          {/* This is
           {'\n'}
           <a
             target="_blank"
@@ -36,17 +36,9 @@ const Dashboard = () => {
             README
           </a>
           {'\n'}
-          for more information.
+          for more information. */}
         </p>
         <div className={styles.buttonContainer}>
-          <Button
-            label="Download for free"
-            className={`btn-purple-fill ${styles.download}`}
-            onClick={() => {
-              window.location.href =
-                'https://github.com/WataruMaeda/react-firebase-boilerplate'
-            }}
-          />
           <Button
             label="Logout"
             className={`btn-purple-outline ${styles.logout}`}
