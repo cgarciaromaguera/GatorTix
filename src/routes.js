@@ -8,6 +8,7 @@ import Spinner from 'components/Spinner'
 
 const Auth = React.lazy(() => import('./pages/auth'))
 const Dashboard = React.lazy(() => import('./pages/dashboard'))
+const Profile = React.lazy(() => import('./pages/profile'))
 
 function Router() {
   const dispatch = useDispatch()
@@ -39,6 +40,9 @@ function Router() {
           <Switch>
             <Route path={path.dashboard}>
               <Dashboard />
+            </Route>
+            <Route path={path.profile}>
+              <Profile />
             </Route>
             <Redirect to={path.dashboard} />
           </Switch>
