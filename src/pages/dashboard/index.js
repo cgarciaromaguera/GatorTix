@@ -25,7 +25,6 @@ const Dashboard = () => {
       <div className={styles.container}>
         <img src={images.logo} className={styles.logo} alt="logo" />
         <h3 className={styles.greeting}>{`Hi👋, ${me?.fullName || 'User'}`}</h3>
-        <h1 className={styles.title}>React + Firebase Boilerplate</h1>
         <p className={styles.description}>
           {/* This is
           {'\n'}
