@@ -1,0 +1,19 @@
+@import '../../theme/core.scss';
+
+.root {
+  flex: 1;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: $light-blue;
+  height: '100vh';
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: rem(50);
+}

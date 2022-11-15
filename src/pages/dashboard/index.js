@@ -4,9 +4,8 @@ import Button from 'components/Button'
 import Dropdown from 'components/Dropdown'
 import { actions } from 'slices/app.slice'
 import { images } from 'theme'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 import styles from './dashboard.module.scss'
-
 
 const Dashboard = () => {
   const dispatch = useDispatch()
@@ -15,12 +14,12 @@ const Dashboard = () => {
   // Temporarily handling dropdown buttons
   const handleMenuOne = () => {
     // eslint-disable-next-line
-    console.log('clicked one');
-  };
+    console.log('clicked one')
+  }
   const handleMenuTwo = () => {
     // eslint-disable-next-line
-    console.log('clicked two');
-  };
+    console.log('clicked two')
+  }
 
   return (
     <div className={styles.root}>
@@ -57,15 +56,23 @@ const Dashboard = () => {
         <Dropdown
           trigger={<button type="button">Dropdown 1</button>}
           menu={[
-            <button type="button" onClick={handleMenuOne}>Menu 1</button>,
-            <button type="button" onClick={handleMenuTwo}>Menu 2</button>,
+            <button type="button" onClick={handleMenuOne}>
+              Menu 1
+            </button>,
+            <button type="button" onClick={handleMenuTwo}>
+              Menu 2
+            </button>,
           ]}
         />
         <Dropdown
           trigger={<button type="button">Dropdown 2</button>}
           menu={[
-            <button type="button" onClick={handleMenuOne}>Menu 3</button>,
-            <button type="button" onClick={handleMenuTwo}>Menu 4</button>,
+            <button type="button" onClick={handleMenuOne}>
+              Menu 3
+            </button>,
+            <button type="button" onClick={handleMenuTwo}>
+              Menu 4
+            </button>,
           ]}
         />
         <div className={styles.buttonContainer}>
@@ -74,6 +81,20 @@ const Dashboard = () => {
             className={`btn-purple-outline ${styles.logout}`}
             onClick={() => dispatch(actions.logout())}
           />
+
+          <Link to="/sell">
+            <Button
+              label="Sell Ticket"
+              className={`btn-purple-outline ${styles.logout}`}
+            />
+          </Link>
+
+          <Link to="/buy">
+            <Button
+              label="Buy Ticket"
+              className={`btn-purple-outline ${styles.logout}`}
+            />
+          </Link>
         </div>
       </div>
     </div>
