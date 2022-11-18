@@ -29,7 +29,6 @@ const Dashboard = () => {
         <h3 className={styles.greeting}>
           <Link to="/profile">{`Hi👋, ${me?.fullName || 'User'}`}</Link>
         </h3>
-        <h1 className={styles.title}>React + Firebase Boilerplate</h1>
         <p className={styles.description}>
           {/* This is
           {'\n'}
