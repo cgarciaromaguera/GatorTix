@@ -5,20 +5,22 @@ import { firestore } from 'utils/firebase'
 import styles from './profile.module.scss'
 
 const Profile = () => {
-  const { me } = useSelector((state) => state.app);
+  const { me } = useSelector((state) => state.app)
   // console.log(me); // pulls all user data from firestore associated with the current userid
 
-  const userRef = firestore.collection("users");
-  const q = userRef.where("email", "==", me?.email);
+  const userRef = firestore.collection('users')
+  const q = userRef.where('email', '==', me?.email)
 
-  const modifyProfile = () => {
-    q.get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
-        });
+  const modifyProfile = (event, val) => {
+    q.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, ' => ', doc.data())
+        userRef.doc(doc.id).update({
+          test: val,
+        })
       })
+    })
   }
 
   return (
@@ -29,7 +31,7 @@ const Profile = () => {
       </div> */}
 
       <div className="container text-center">
-        <p>SPACE (for nav bar)</p>
+        {/* <p>SPACE (for nav bar)</p> */}
       </div>
 
       <div className="container">
@@ -51,13 +53,13 @@ const Profile = () => {
             <Button
               label="SetFirestore"
               className="btn-purple-outline"
-              onClick={modifyProfile}
+              onClick={(event) => modifyProfile(event, 'test')}
             />
           </div>
         </div>
       </div>
-    </div >
-  );
+    </div>
+  )
 }
 
 Profile.propTypes = {}
