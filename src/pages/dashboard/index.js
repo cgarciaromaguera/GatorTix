@@ -4,7 +4,9 @@ import Button from 'components/Button'
 import Dropdown from 'components/Dropdown'
 import { actions } from 'slices/app.slice'
 import { images } from 'theme'
+import { Link } from "react-router-dom"
 import styles from './dashboard.module.scss'
+
 
 const Dashboard = () => {
   const dispatch = useDispatch()
@@ -19,12 +21,15 @@ const Dashboard = () => {
     // eslint-disable-next-line
     console.log('clicked two');
   };
-  
+
   return (
     <div className={styles.root}>
       <div className={styles.container}>
         <img src={images.logo} className={styles.logo} alt="logo" />
-        <h3 className={styles.greeting}>{`Hi👋, ${me?.fullName || 'User'}`}</h3>
+        <h3 className={styles.greeting}>
+          <Link to="/profile">{`Hi👋, ${me?.fullName || 'User'}`}</Link>
+        </h3>
+        <h1 className={styles.title}>React + Firebase Boilerplate</h1>
         <p className={styles.description}>
           {/* This is
           {'\n'}
