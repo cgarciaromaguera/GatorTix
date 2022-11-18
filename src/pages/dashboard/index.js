@@ -42,12 +42,27 @@ const Dashboard = () => {
           {'\n'}
           for more information. */}
         </p>
+
         <div className={styles.buttonContainer}>
           <Button
             label="Logout"
             className={`btn-purple-outline ${styles.logout}`}
             onClick={() => dispatch(actions.logout())}
           />
+
+          <Link to="/sell">
+            <Button
+              label="Sell Ticket"
+              className={`btn-purple-outline ${styles.logout}`}
+            />
+          </Link>
+
+          <Link to="/buy">
+            <Button
+              label="Buy Ticket"
+              className={`btn-purple-outline ${styles.logout}`}
+            />
+          </Link>
         </div>
       </div>
     </div>
