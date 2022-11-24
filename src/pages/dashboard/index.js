@@ -11,7 +11,7 @@ const Dashboard = () => {
   const { me } = useSelector((state) => state.app)
 
   return (
-    <div className={styles.root}>
+    <div className={styles.root} style={{height:'100vh'}}>
       <div className={styles.container}>
         <img src={images.logo} className={styles.logo} alt="logo" />
         <h3 className={styles.greeting}>

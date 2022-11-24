@@ -6,7 +6,7 @@ const Buy = () => {
   const { me } = useSelector((state) => state.app)
 
   return (
-    <div className={styles.root}>
+    <div className={styles.root} style={{height:'100vh'}}>
       <div className={styles.container}>
         <p>{me?.fullName || 'User'}</p>
         Buy Ticket
