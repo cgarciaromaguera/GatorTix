@@ -11,6 +11,7 @@ const Dashboard = React.lazy(() => import('./pages/dashboard'))
 const Profile = React.lazy(() => import('./pages/profile'))
 const Buy = React.lazy(() => import('./pages/buy'))
 const Sell = React.lazy(() => import('./pages/sell'))
+const NavBar = React.lazy(() => import('./pages/navbar'))
 
 function Router() {
   const dispatch = useDispatch()
@@ -39,32 +40,35 @@ function Router() {
             <Redirect to="/" />
           </Switch>
         ) : (
-          <Switch>
-            <Route path="/login">
-              <Dashboard />
-            </Route>
+          <div>
+            <NavBar />
+            <Switch>
+              <Route path="/login">
+                <Dashboard />
+              </Route>
 
-            <Route path={path.dashboard}>
-              <Dashboard />
-            </Route>
+              <Route path={path.dashboard}>
+                <Dashboard />
+              </Route>
 
-            {/* Profile Page Route */}
-            <Route path={path.profile}>
-              <Profile />
-            </Route>
+              {/* Profile Page Route */}
+              <Route path={path.profile}>
+                <Profile />
+              </Route>
 
-            {/* Buy Page Route */}
-            <Route path="/buy">
-              <Buy />
-            </Route>
+              {/* Buy Page Route */}
+              <Route path="/buy">
+                <Buy />
+              </Route>
 
-            {/* Sell Page Route */}
-            <Route path="/sell">
-              <Sell />
-            </Route>
+              {/* Sell Page Route */}
+              <Route path="/sell">
+                <Sell />
+              </Route>
 
-            <Redirect to={path.dashboard} />
-          </Switch>
+              <Redirect to={path.dashboard} />
+            </Switch>
+          </div>
         )}
       </Suspense>
     </BrowserRouter>

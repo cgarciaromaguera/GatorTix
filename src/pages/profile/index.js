@@ -15,7 +15,7 @@ const Profile = () => {
     q.get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, ' => ', doc.data())
+        // console.log(doc.id, ' => ', doc.data())
         userRef.doc(doc.id).update({
           test: val,
         })
@@ -24,7 +24,7 @@ const Profile = () => {
   }
 
   return (
-    <div className={styles.root}>
+    <div className={styles.root} style={{height:'100vh'}}>
       {/* <div className="d-flex flex-row justify-content-center align-items-stretch">
         <div className="p-1">{me?.fullName || 'User'}</div>
         <div className="p-1">{me?.fullName || 'User'}</div>
