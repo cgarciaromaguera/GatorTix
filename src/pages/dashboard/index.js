@@ -119,7 +119,12 @@ const Dashboard = () => {
           <p>Contact: {ticketListings[index]?.contact}</p>
         </div>
         <div className="border border-primary col-sm text-left">
-          <p>Complete: {ticketListings[index]?.complete.toString()}</p>
+          <p>
+            Complete:{' '}
+            {ticketListings[index]?.complete.toString() === 'true'
+              ? 'Yes'
+              : 'No'}
+          </p>
           <p>Price (USD): {ticketListings[index]?.price}</p>
         </div>
       </div>,
