@@ -71,8 +71,6 @@ const Dashboard = () => {
         ticketListings[tIndex]?.game !== gameListings[gIndex]?.id &&
         gIndex === gSize - 1
       ) {
-        console.log(tIndex)
-        console.log(gIndex)
         games.push({
           away: 'unknown',
           home: 'unknown',
@@ -129,7 +127,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className={styles.root} style={{height:'100vh'}}>
+    <div className={styles.root} style={{ height: '100vh' }}>
       <div className={styles.container}>
         <img src={images.logo} className={styles.logo} alt="logo" />
         <h3 className={styles.greeting}>
