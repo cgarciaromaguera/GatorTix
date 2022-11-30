@@ -5,6 +5,8 @@ import { actions } from 'slices/app.slice'
 import { images } from 'theme'
 import { Link } from 'react-router-dom'
 import { firestore } from 'utils/firebase'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 import styles from './dashboard.module.scss'
 
 const Dashboard = () => {
@@ -104,29 +106,37 @@ const Dashboard = () => {
   }
 
   const pageList = []
+  pageList.push(
+    <div className="row p-2">
+      <hr className="border border-primary w-100" />
+    </div>
+  )
   for (let index = 0; index < tSize; index += 1) {
     pageList.push(
       <div className="row p-2">
-        <div className="border border-primary col-6 text-left">
-          <p>
-            Game: {games[index]?.home} vs {games[index]?.away}
-          </p>
-          <p>Time: {games[index]?.time.toString()}</p>
+        <div className="col-sm" style={{ alignItems: 'center', display: 'flex' }}>
+          <img src={images.ticket} className={styles.ticket} alt="ticket" style={{ margin: 'auto' }} />
         </div>
-        <div className="border border-primary col-sm text-left">
-          <p>Buyer: {ticketListings[index]?.buyer}</p>
-          <p>Seller: {users[index]?.fullname}</p>
+        <div className="col-4 text-left">
+          <p className="font-weight-bold">
+            {games[index]?.home} vs {games[index]?.away}
+          </p>
+          <p>{`${games[index]?.time.getMonth().toString()}/${games[index]?.time.getDay().toString()}/${games[index]?.time.getFullYear().toString()} ${games[index]?.time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`}</p>
+        </div>
+        <div className="col-sm text-left">
+          {/* <p>Buyer: {ticketListings[index]?.buyer}</p> */}
+          <FontAwesomeIcon icon={ faUser } />{` ${users[index]?.fullname}`}
           <p>Contact: {ticketListings[index]?.contact}</p>
         </div>
-        <div className="border border-primary col-sm text-left">
+        <div className="col-sm text-left">
           <p>
-            Complete:{' '}
             {ticketListings[index]?.complete.toString() === 'true'
-              ? 'Yes'
-              : 'No'}
+              ? 'SOLD'
+              : 'AVAILABLE'}
           </p>
-          <p>Price (USD): {ticketListings[index]?.price}</p>
+          <p>${ticketListings[index]?.price}</p>
         </div>
+        <hr className="border border-primary w-100" />
       </div>,
     )
   }
@@ -162,6 +172,7 @@ const Dashboard = () => {
           {'\n'}
           for more information. */}
         </p>
+        <div className="container text-left font-weight-bold">Tickets</div>
         <div className="container text-center">{pageList}</div>
         <div className={styles.buttonContainer}>
           <Button
