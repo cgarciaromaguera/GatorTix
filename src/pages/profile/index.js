@@ -24,7 +24,7 @@ const Profile = () => {
   }
 
   return (
-    <div className={styles.root} style={{height:'100vh'}}>
+    <div className={styles.root} style={{ height: '100vh' }}>
       {/* <div className="d-flex flex-row justify-content-center align-items-stretch">
         <div className="p-1">{me?.fullName || 'User'}</div>
         <div className="p-1">{me?.fullName || 'User'}</div>
@@ -49,13 +49,13 @@ const Profile = () => {
           <div className="border border-primary col-sm-12 p-2 m-2">
             {me?.fullName || 'User'}&apos;s&nbsp;Purchases
           </div>
-          <div className={styles.buttonContainer}>
+          {/* <div className={styles.buttonContainer}>
             <Button
               label="SetFirestore"
               className="btn-purple-outline"
               onClick={(event) => modifyProfile(event, 'test')}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
