@@ -10,6 +10,7 @@
 }
 
 .container {
+  background-color: $light-blue;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -51,22 +52,13 @@
 }
 
 .buttonContainer {
+  background-color: $light-blue;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 50%;
-  max-width: rem(480);
-  margin-top: rem(120);
-  @include phone {
-    width: 100%;
-    max-width: 100%;
-    margin: rem(120) rem(16);
-  }
 }
 
-.download {
-  width: 45%;
-  height: rem(50);
+.link {
+  text-decoration: none;
 }
 
 .logout {
