@@ -140,7 +140,6 @@ const Dashboard = () => {
           })}`}</p>
         </div>
         <div className="col-sm text-left">
-          {/* <p>Buyer: {ticketListings[index]?.buyer}</p> */}
           <FontAwesomeIcon icon={faUser} />
           {` ${users[index]?.fullname}`}
           <p>Contact: {ticketListings[index]?.contact}</p>
