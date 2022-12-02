@@ -6,16 +6,29 @@ const Sell = () => {
   const { me } = useSelector((state) => state.app)
 
   return (
-    <div className={styles.root} style={{height:'100vh'}}>
-      <div className={styles.container}>
-        <p>{me?.fullName || 'User'}</p>
-        Sell Ticket
-      </div>
+    <div className="ticket-form">
+      <h1>UF Ticket Seller</h1>
+      <form>
+        <fieldset>
+          <p>Full Name</p>
+          <input name="name" />
+
+          <p>E-mail</p>
+          <input name="game" />
+
+          <p>Phone Number</p>
+          <input name="phone number" />
+
+          <p>Enter Ticket Price</p>
+          <input name="ticket price" />
+
+          <p>Upload Ticket</p>
+          <input name="upload ticket" />
+        </fieldset>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   )
 }
-
-Sell.propTypes = {}
-Sell.defaultProps = {}
 
 export default Sell
