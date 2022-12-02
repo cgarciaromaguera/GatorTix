@@ -109,23 +109,39 @@ const Dashboard = () => {
   pageList.push(
     <div className="row p-2">
       <hr className="border border-primary w-100" />
-    </div>
+    </div>,
   )
   for (let index = 0; index < tSize; index += 1) {
     pageList.push(
       <div className="row p-2">
-        <div className="col-sm" style={{ alignItems: 'center', display: 'flex' }}>
-          <img src={images.ticket} className={styles.ticket} alt="ticket" style={{ margin: 'auto' }} />
+        <div
+          className="col-sm"
+          style={{ alignItems: 'center', display: 'flex' }}
+        >
+          <img
+            src={images.ticket}
+            className={styles.ticket}
+            alt="ticket"
+            style={{ margin: 'auto' }}
+          />
         </div>
         <div className="col-4 text-left">
           <p className="font-weight-bold">
             {games[index]?.home} vs {games[index]?.away}
           </p>
-          <p>{`${games[index]?.time.getMonth().toString()}/${games[index]?.time.getDay().toString()}/${games[index]?.time.getFullYear().toString()} ${games[index]?.time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`}</p>
+          <p>{`${games[index]?.time.getMonth().toString()}/${games[index]?.time
+            .getDay()
+            .toString()}/${games[index]?.time.getFullYear().toString()} ${games[
+            index
+          ]?.time.toLocaleString('en-US', {
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true,
+          })}`}</p>
         </div>
         <div className="col-sm text-left">
-          {/* <p>Buyer: {ticketListings[index]?.buyer}</p> */}
-          <FontAwesomeIcon icon={ faUser } />{` ${users[index]?.fullname}`}
+          <FontAwesomeIcon icon={faUser} />
+          {` ${users[index]?.fullname}`}
           <p>Contact: {ticketListings[index]?.contact}</p>
         </div>
         <div className="col-sm text-left">
@@ -148,39 +164,15 @@ const Dashboard = () => {
         <h3 className={styles.greeting}>
           <Link to="/profile">{`Hi👋, ${me?.fullName || 'User'}`}</Link>
         </h3>
-        <p className={styles.description}>
-          {/* This is
-          {'\n'}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/facebook/create-react-app"
-          >
-            create react native app
-          </a>
-          {'\n'}
-          based firebase pre-setup template with basic development setup. For
-          the setup procedure, check the
-          {'\n'}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/WataruMaeda/react-firebase-boilerplate/blob/master/README.md"
-          >
-            README
-          </a>
-          {'\n'}
-          for more information. */}
-        </p>
         <div className="container text-left font-weight-bold">Tickets</div>
         <div className="container text-center">{pageList}</div>
+
         <div className={styles.buttonContainer}>
           <Button
             label="Logout"
             className={`btn-purple-outline ${styles.logout}`}
             onClick={() => dispatch(actions.logout())}
           />
-
           <Link to="/sell">
             <Button
               label="Sell Ticket"
