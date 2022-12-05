@@ -11,6 +11,7 @@ const Dashboard = React.lazy(() => import('./pages/dashboard'))
 const Profile = React.lazy(() => import('./pages/profile'))
 const Buy = React.lazy(() => import('./pages/buy'))
 const Sell = React.lazy(() => import('./pages/sell'))
+const Report = React.lazy(() => import('./pages/report'))
 const NavBar = React.lazy(() => import('./pages/navbar'))
 
 function Router() {
@@ -64,6 +65,11 @@ function Router() {
               {/* Sell Page Route */}
               <Route path="/sell">
                 <Sell />
+              </Route>
+
+              {/* Report Page Route */}
+              <Route path="/report">
+                <Report />
               </Route>
 
               <Redirect to={path.dashboard} />

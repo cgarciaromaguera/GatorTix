@@ -173,14 +173,13 @@ const Dashboard = () => {
             className={`btn-purple-outline ${styles.logout}`}
             onClick={() => dispatch(actions.logout())}
           />
-          <Link to="/sell">
+          <Link to="/sell" style={{textDecoration: 'none'}}>
             <Button
               label="Sell Ticket"
               className={`btn-purple-outline ${styles.logout}`}
             />
           </Link>
-
-          <Link to="/buy">
+          <Link to="/buy" style={{textDecoration: 'none'}}>
             <Button
               label="Buy Ticket"
               className={`btn-purple-outline ${styles.logout}`}

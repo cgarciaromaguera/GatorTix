@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from 'components/Button'
 import { useSelector } from 'react-redux'
-import styles from './sell.module.scss'
+import styles from './report.module.scss'
 
 
 const Sell = () => {
@@ -10,23 +10,11 @@ const Sell = () => {
   return (
     <div className={styles.root} style={{ height: '100vh' }}>
       <div className="ticket-form text-center container">
-        <h1>UF Ticket Seller</h1>
+        <h1>UF Ticket Report Form</h1>
         <form>
           <fieldset>
-            <p>Full Name</p>
-            <input name="name" />
-
-            <p>E-mail</p>
-            <input name="game" />
-
-            <p>Phone Number</p>
-            <input name="phone number" />
-
-            <p>Enter Ticket Price</p>
-            <input name="ticket price" />
-
-            <p>Upload Ticket</p>
-            <input name="upload ticket" />
+            <p>Report the issue here:</p>
+            <textarea name="report" />
           </fieldset>
           <hr />
           <Button type="submit">Submit</Button>
