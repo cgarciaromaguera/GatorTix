@@ -34,6 +34,7 @@ function Router() {
     <BrowserRouter>
       <Suspense fallback={<Fallback />}>
         {!loggedIn ? (
+          // Add routes to all pages in web application
           <Switch>
             <Route path="/">
               <Auth />

@@ -9,9 +9,11 @@ const Buy = () => {
   return (
     <div className={styles.root} style={{ height: '100vh' }}>
       <div className="ticket-form text-center container">
+        {/* Ticket buyer header */}
         <h1>UF Ticket Buyer</h1>
         <form>
           <fieldset>
+            {/* Create form with name, email, number, and price */}
             <p>Full Name</p>
             <input name="name" />
 
@@ -23,9 +25,6 @@ const Buy = () => {
 
             <p>Enter Ticket Price</p>
             <input name="ticket price" />
-
-            <p>Upload Ticket</p>
-            <input name="upload ticket" />
           </fieldset>
           <hr />
           <Button type="submit">Submit</Button>
