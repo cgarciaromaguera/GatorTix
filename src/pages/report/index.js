@@ -8,6 +8,7 @@ const Sell = () => {
   const { me } = useSelector((state) => state.app)
 
   return (
+    // report form
     <div className={styles.root} style={{ height: '100vh' }}>
       <div className="ticket-form text-center container">
         <h1>UF Ticket Report Form</h1>

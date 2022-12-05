@@ -56,6 +56,7 @@ const Login = () => {
   }
 
   return (
+    // login form
     <div className={styles.root}>
       {resErr && <ErrorBox>{resErr}</ErrorBox>}
       <h2 className={styles.title}>Login</h2>
