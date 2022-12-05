@@ -11,29 +11,25 @@ const Profile = () => {
   const userRef = firestore.collection('users')
   const q = userRef.where('email', '==', me?.email)
 
-  const modifyProfile = (event, val) => {
-    q.get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        // console.log(doc.id, ' => ', doc.data())
-        userRef.doc(doc.id).update({
-          test: val,
-        })
-      })
-    })
-  }
+  // const modifyProfile = (event, val) => {
+  //   q.get().then((querySnapshot) => {
+  //     querySnapshot.forEach((doc) => {
+  //       // doc.data() is never undefined for query doc snapshots
+  //       // console.log(doc.id, ' => ', doc.data())
+  //       userRef.doc(doc.id).update({
+  //         test: val,
+  //       })
+  //     })
+  //   })
+  // }
 
   return (
     <div className={styles.root} style={{ height: '100vh' }}>
-      {/* <div className="d-flex flex-row justify-content-center align-items-stretch">
-        <div className="p-1">{me?.fullName || 'User'}</div>
-        <div className="p-1">{me?.fullName || 'User'}</div>
-      </div> */}
-
       <div className="container text-center">
-        {/* <p>SPACE (for nav bar)</p> */}
+        {/* space for nav bar */}
       </div>
 
+      {/* profile data */}
       <div className="container">
         <div className="col">
           <div className="border border-primary col-sm-12 p-2 m-2">
@@ -49,13 +45,6 @@ const Profile = () => {
           <div className="border border-primary col-sm-12 p-2 m-2">
             {me?.fullName || 'User'}&apos;s&nbsp;Purchases
           </div>
-          {/* <div className={styles.buttonContainer}>
-            <Button
-              label="SetFirestore"
-              className="btn-purple-outline"
-              onClick={(event) => modifyProfile(event, 'test')}
-            />
-          </div> */}
         </div>
       </div>
     </div>

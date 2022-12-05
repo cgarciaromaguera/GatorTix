@@ -54,6 +54,7 @@ const ResetPassword = () => {
   }
 
   return (
+    // reset password form
     <div className={styles.root}>
       {resErr && <ErrorBox>{resErr}</ErrorBox>}
       <h2 className={styles.title}>Reset Password</h2>
