@@ -1,13 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { firestore } from 'utils/firebase'
 import styles from './profile.module.scss'
 
 const Profile = () => {
   const { me } = useSelector((state) => state.app)
   // console.log(me); // pulls all user data from firestore associated with the current userid
-
-  const userRef = firestore.collection('users')
 
   return (
     <div className={styles.root} style={{ height: '100vh' }}>
