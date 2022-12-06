@@ -33,7 +33,7 @@ const Dashboard = () => {
     })
 
     const gameRef = firestore.collection('games')
-    const gunsubscribe = gameRef.onSnapshot((snapshot) => {
+    gameRef.onSnapshot((snapshot) => {
       const gameArray = snapshot.docs.map((doc) => ({
         id: doc.id,
         away: doc.get('away'),
@@ -44,7 +44,7 @@ const Dashboard = () => {
     })
 
     const userRef = firestore.collection('users')
-    const uunsubscribe = userRef.onSnapshot((snapshot) => {
+    userRef.onSnapshot((snapshot) => {
       const userArray = snapshot.docs.map((doc) => ({
         id: doc.id,
         email: doc.get('email'),
@@ -132,12 +132,12 @@ const Dashboard = () => {
           <p>{`${games[index]?.time.getMonth().toString()}/${games[index]?.time
             .getDay()
             .toString()}/${games[index]?.time.getFullYear().toString()} ${games[
-            index
-          ]?.time.toLocaleString('en-US', {
-            hour: 'numeric',
-            minute: 'numeric',
-            hour12: true,
-          })}`}</p>
+              index
+            ]?.time.toLocaleString('en-US', {
+              hour: 'numeric',
+              minute: 'numeric',
+              hour12: true,
+            })}`}</p>
         </div>
         <div className="col-sm text-left">
           <FontAwesomeIcon icon={faUser} />
@@ -173,13 +173,13 @@ const Dashboard = () => {
             className={`btn-purple-outline ${styles.logout}`}
             onClick={() => dispatch(actions.logout())}
           />
-          <Link to="/sell" style={{textDecoration: 'none'}}>
+          <Link to="/sell" style={{ textDecoration: 'none' }}>
             <Button
               label="Sell Ticket"
               className={`btn-purple-outline ${styles.logout}`}
             />
           </Link>
-          <Link to="/buy" style={{textDecoration: 'none'}}>
+          <Link to="/buy" style={{ textDecoration: 'none' }}>
             <Button
               label="Buy Ticket"
               className={`btn-purple-outline ${styles.logout}`}

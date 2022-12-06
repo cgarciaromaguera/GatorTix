@@ -1,6 +1,6 @@
 export const tests = {
   name: {
-    test: /^[a-z]+([a-z- ',.-]?)+[a-z.]+$/i,
+    test: /^[a-z]+([a-z- ',.]?)+[a-z.]+$/i,
     error: 'Please enter a valid name',
   },
   email: {
