@@ -8,7 +8,6 @@ import {
   faPaperPlane,
 } from '@fortawesome/free-solid-svg-icons'
 
-// TODO: add icons here...
 export const loadFontIcons = () =>
   library.add(faExclamationTriangle, faEnvelopeOpenText, faPaperPlane)
 
