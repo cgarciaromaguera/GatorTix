@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import Button from 'components/Button'
 import { firestore } from 'utils/firebase'
 import styles from './profile.module.scss'
 
@@ -9,19 +8,6 @@ const Profile = () => {
   // console.log(me); // pulls all user data from firestore associated with the current userid
 
   const userRef = firestore.collection('users')
-  const q = userRef.where('email', '==', me?.email)
-
-  // const modifyProfile = (event, val) => {
-  //   q.get().then((querySnapshot) => {
-  //     querySnapshot.forEach((doc) => {
-  //       // doc.data() is never undefined for query doc snapshots
-  //       // console.log(doc.id, ' => ', doc.data())
-  //       userRef.doc(doc.id).update({
-  //         test: val,
-  //       })
-  //     })
-  //   })
-  // }
 
   return (
     <div className={styles.root} style={{ height: '100vh' }}>
